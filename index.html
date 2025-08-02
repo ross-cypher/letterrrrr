@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mein Fraulein</title>
+    <style>
+        body {
+            min-height: 100vh;
+            background-color: #fce4ec;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+        .letter-container {
+            background-color: #f8bbd0;
+            width: 60%;
+            justify-content: center;
+            max-width: 600px;
+            max-height: max-content;
+            margin: 40px auto; /* This centers horizontally */
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            position: relative;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        .letter-header {
+            font-size: 25px;
+            font-weight: bold;
+            color: #880e4f; 
+            margin-bottom: 15px;
+            text-align: center;
+            transition: color 0.3s;
+        }
+
+        .letter-header:hover {
+            color: #d81b60;
+        }
+
+        .letter-body {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #ad1457;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            padding: 0;
+            transition: all 1s ease-in-out;
+        }
+
+        .letter-body.visible {
+            max-height: max-content;
+            overflow: auto;
+            padding: 20px 0;
+            opacity: 1;
+        }
+
+        .toggle-btn {
+            background-color: #d81b60;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+            transition: background-color 10s;
+        }
+
+        .toggle-btn:hover {
+            background-color: #880e4f;
+        }
+
+        .letter-signature {
+            font-style: italic;
+            margin-top: 30px;
+            font-size: 18px;
+            text-align: center;
+        }
+        
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="letter-container">
+        <div class="letter-header">
+            Mein Fraulein,
+        </div>
+
+        <div class="letter-body">
+            <p>
+            I hope you are doing well. I wanted to take a moment to express my gratitude for your presence and kindness.
+            You've always been there for me, and I truly appreciate it. :D
+            I've never been good at expressing how i feel, but when it comes to you, I find it easier.
+            You have a way of making me feel comfortable and understood, even when I struggle to understand my own emotions.
+            I cherish the moments we share, whether it's a simple conversation or a quiet moment together.
+            I will always thank God for bringing you into my life.
+            You have the most beautiful smile, and it lights up my day every time I see it.
+            The way you laugh makes my heart melt and I can't help but smile when I hear it.
+            I love the way you always know how to make me feel better, even on my worst days.
+            Your soul is beautiful and kind, I love the way you care for others and how selfless you are.
+            The way you know when something is wrong and how you always try to help me.
+            I see how hard you work and how much you care about the people around you.
+            I know you don't always see it, but you are an amazing person.
+            I understand that you may not always feel like you are doing enough, but I want you to know that you are more than enough for me.
+            You have a way of making me feel special and loved, even when I don't feel it myself.
+            I love all of you, your quirks, your flaws, and everything that makes you who you are.
+            You are perfect just the way you are, and I wouldn't change a thing about you.
+            I want you to know that I am always here for you, just as you have been there for me.
+            I know you don't talk much about your feelings, but I want you to know that it's okay.
+            You don't have to hide anything from me, I will always be here to listen and support you.
+            I want you to feel comfortable being yourself around me, and I hope you know that you can always count on me.
+            I will always be here to support you, no matter what.
+            I want you to know that you are never alone, and I will always be here to help you through anything.    
+            You're doing great, and I want you to know that I am proud of you.
+            I know that life can be tough sometimes, but I believe in you and your strength.
+            I look forward to the next time we see each other and hope we can continue to make memories together.
+            Thank you for being such an amazing person in my life. :3 I love you
+            "You are althogether beautiful, my darling; there is no flaw in you." - Song of Solomon 4:7
+            </p>
+        </div>
+        <button class="toggle-btn" onclick="toggleLetter()">Open Letter</button>
+        <div class="letter-signature">
+            Yours truly,<br>
+            Leo
+        </div>
+    </div>
+    <script>
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleLetter() {
+            const letterBody = document.querySelector('.letter-body');
+            const button = document.querySelector('.toggle-btn');
+            
+            letterBody.classList.toggle('visible');
+            
+            if (letterBody.classList.contains('visible')) {
+                button.textContent = "Close Letter";
+            } else {
+                button.textContent = "Open Letter";
+            }
+        }
+
+        window.onscroll = function() {
+            const scrollBtn = document.getElementById("scrollBtn");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollBtn.style.display = "block";
+            } else {
+                scrollBtn.style.display = "none";
+            }
+        };
+    </script>
+</body>
+</html>
